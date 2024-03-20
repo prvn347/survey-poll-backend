@@ -9,7 +9,7 @@ const app = express()
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 const corsOptions = {
-    origin: "http://localhost:5173",
+    origin: "https://survey-poll.vercel.app",
     credentials: true
 };
 app.use( cors(corsOptions) );
