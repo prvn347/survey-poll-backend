@@ -2,7 +2,7 @@ const z = require('zod')
 
 const userSchema =   z.object({
 email: z.string().email(),
-password:z.string().min(8),
+password:z.string().min(6),
 name:z.string().optional()
 
 })
