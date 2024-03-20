@@ -22,7 +22,8 @@ const createUser = async(req,res)=>{
         const parsePayload =   userSchema.safeParse(body)
         console.log(parsePayload)
         if(!parsePayload.success){
-           return alert('Please enter valid input.')
+           console.log(parsePayload.success)
+
         }
         
         const newUser = await UserModel.createUser(body);
@@ -39,7 +40,7 @@ const createUser = async(req,res)=>{
         res.status(201).json({newUser,token})
 
     } catch (error) {
-        res.status(400).json({error:"Invalid input"})
+        res.status(400).json({error})
         
     }
 
