@@ -7,11 +7,13 @@ const { surveyRouter } = require('./routes/surveyRouter');
 const { userRouter } = require('./routes/userRouter');
 const app = express()
 const cookieParser = require('cookie-parser');
+const { reloadWebsite } = require('./spin-down');
 app.use(cookieParser());
 const corsOptions = {
     origin: "https://survey-poll.vercel.app",
     credentials: true
 };
+reloadWebsite()
 app.use( cors(corsOptions) );
 app.use(express.json())
 app.get('/',(req,res)=>{
